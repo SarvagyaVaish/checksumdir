@@ -25,6 +25,8 @@ def main():
                                                       'sha512'), default='md5')
     parser.add_argument('-e', '--excluded-files', nargs='+',
                         help='List of excluded files.')
+    parser.add_argument('-d', '--excluded-dirs', nargs='+',
+                        help='List of excluded dirs.')
     parser.add_argument('-i', '--ignore-hidden', action='store_true', default=False,
                         help='Ignore hidden files')
     parser.add_argument('-f', '--follow-links', action='store_true', default=False,
@@ -38,6 +40,7 @@ def main():
             dirname=args.directory,
             hashfunc=args.algorithm,
             excluded_files=args.excluded_files,
+            excluded_dirs=args.excluded_dirs,
             ignore_hidden=args.ignore_hidden,
             followlinks=args.follow_links,
             excluded_extensions=args.excluded_extensions
